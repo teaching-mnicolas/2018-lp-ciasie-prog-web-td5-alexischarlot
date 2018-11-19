@@ -1,0 +1,161 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MyMediatek</title>
+        <link rel="stylesheet" href="lib/semantic-2.4.0/semantic.min.css">
+    </head>
+    <body>
+
+        <div class="ui secondary pointing menu">
+            <a id="btnAllMedias" class="item active">
+                All
+            </a>
+            <a id="btnAlbums" class="item">
+                <i class="music icon"></i>
+                Albums
+            </a>
+            <a id="btnGames" class="item">
+                <i class="gamepad icon"></i>
+                Games
+            </a>
+            <a id="btnMovies" class="item">
+                <i class="film icon"></i>
+                Movies
+            </a>
+            <div class="right menu">
+                <button id="btnAddMedia" class="ui primary button">
+                    Add media
+                </button>
+            </div>
+        </div>
+
+        <div class="ui segment">
+            <div id="medias" class="ui link cards"></div>
+        </div>
+
+        <div class="ui modal">
+            <i class="close icon"></i>
+            <div class="header">
+                Add media
+            </div>
+            <div class="content">
+                <form class="ui form">
+                    <div class="inline field">
+                        <label>Type</label>
+                        <div class="ui dropdown">
+                            <input type="hidden" name="type">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Type</div>
+                            <div class="menu">
+                                <div class="item" data-value="0">Album</div>
+                                <div class="item" data-value="1">Game</div>
+                                <div class="item" data-value="2">Movie</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui horizontal divider">General</div>
+
+                    <div id="fields">
+                        <div class="inline field">
+                            <label>Title</label>
+                            <input type="text" name="title" placeholder="Title">
+                        </div>
+                        <div class="inline field">
+                            <label>Release date</label>
+                            <input type="date" name="releaseDate">
+                        </div>
+                        <div class="inline field">
+                            <label>Rating</label>
+                            <div class="ui star rating" data-rating="3" data-max-rating="5"></div>
+                        </div>
+                        <div class="ui inline field labeled input">
+                            <label>Image</label>
+                            <div class="ui label">
+                                http://
+                            </div>
+                            <input type="text" name="img" placeholder="mysite.com">
+                        </div>
+                    </div>
+
+                    <div class="ui horizontal divider">Specific</div>
+
+
+                    <div id="specificFields"></div>
+
+                </form>
+            </div>
+            <div class="actions">
+                <div class="ui black deny button">
+                Cancel
+                </div>
+                <div class="ui positive right labeled icon button">
+                Add
+                <i class="checkmark icon"></i>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="lib/jquery-3.3.1/jquery-3.3.1.js"></script>
+        <script type="text/javascript" src="lib/semantic-2.4.0/semantic.min.js"></script>
+
+        <script type="text/javascript">
+            MyMediatek = {
+                models: {}
+            }
+
+            $(document).ready(function () {
+                function generateAlbum () {
+                    const title = "Full Circle"
+                    const releaseDate = new Date(2016, 3, 1)
+                    const rating = 5
+                    const img = "img/albums/full-circle.jpg"
+                    const artists = "HAELOS"
+                    const nbTracks = 11
+
+                    return new MyMediatek.models.Album(title, releaseDate, rating, img, artists, nbTracks)
+                }
+
+                function generateGame () {
+                    const title = "Hollow Knight"
+                    const releaseDate = new Date(2017, 2, 24)
+                    const rating = 5
+                    const img = "img/games/hollow-knight.jpg"
+                    const studio = "Team Cherry"
+                    const nbPlayers = 1
+                    const plot = "The game tells the story of a knight on a quest to uncover the secrets of the long-abandoned insect kingdom of Hallownest, whose haunting depths draw in the adventurous and brave with promises of treasures and answers to ancient mysteries."
+
+                    return new MyMediatek.models.Game(title, releaseDate, rating, img, studio, nbPlayers, plot)
+                }
+
+                function generateMovie () {
+                    const title = "Scott Pilgrim vs. the World"
+                    const releaseDate = new Date(2010, 8, 13)
+                    const rating = 5
+                    const img = "img/movies/scott-pilgrim.jpg"
+                    const director = "Edgar Wright"
+                    const actors = "Michael Cera, Mary Elizabeth Winstead"
+                    const duration = 112
+                    const plot = "Scott Pilgrim must defeat his new girlfriend's seven evil exes in order to win her heart."
+
+                    return new MyMediatek.models.Movie(title, releaseDate, rating, img, director, actors, duration, plot)
+                }
+
+                const app = new MyMediatek.App()
+                app.init()
+                app.addMedia(generateAlbum())
+                app.addMedia(generateGame())
+                app.addMedia(generateMovie())
+            })
+        </script>
+
+        <!-- include src files here... -->
+        <script type="text/javascript" src="src/models/Media.js"></script>
+        <script type="text/javascript" src="src/models/Collection.js"></script>
+        <script type="text/javascript" src="src/models/Album.js"></script>
+        <script type="text/javascript" src="src/models/Game.js"></script>
+        <script type="text/javascript" src="src/models/Movie.js"></script>
+
+        <script type="text/javascript" src="src/App.js"></script>
+    </body>
+</html>

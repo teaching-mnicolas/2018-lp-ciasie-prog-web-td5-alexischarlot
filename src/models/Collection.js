@@ -1,6 +1,5 @@
-MyMediatek.models.Collection = (function () {
 
-    class Collection {
+   export default class Collection {
         constructor () {
             this.medias = []
         }
@@ -24,6 +23,3 @@ MyMediatek.models.Collection = (function () {
         }
     }
 
-    return Collection
-
-})()

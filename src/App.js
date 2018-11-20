@@ -1,14 +1,14 @@
-MyMediatek.App = (function () {
-    const Album = MyMediatek.models.Album
-    const Collection = MyMediatek.models.Collection
-    const Game = MyMediatek.models.Game
-    const Movie = MyMediatek.models.Movie
+
+    import Album from './models/Album.js'
+    import Collection from './models/Collection.js'
+    import Game from './models/Game.js'
+    import Movie from './models/Movie.js'
 
     const ALBUM = 0
     const GAME = 1
     const MOVIE = 2
 
-    class App {
+    export default class App {
         constructor () {
             this.collection = new Collection()
             this.currentList = this.collection.medias
@@ -256,5 +256,4 @@ MyMediatek.App = (function () {
         }
     }
 
-    return App
-})()
+  

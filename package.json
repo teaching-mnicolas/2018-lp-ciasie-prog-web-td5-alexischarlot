@@ -1,0 +1,30 @@
+{
+  "name": "2018-lp-ciasie-prog-web-td5-alexischarlot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "webpack": "^4.26.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.1.2"
+  },
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teaching-mnicolas/2018-lp-ciasie-prog-web-td5-alexischarlot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teaching-mnicolas/2018-lp-ciasie-prog-web-td5-alexischarlot/issues"
+  },
+  "homepage": "https://github.com/teaching-mnicolas/2018-lp-ciasie-prog-web-td5-alexischarlot#readme"
+}

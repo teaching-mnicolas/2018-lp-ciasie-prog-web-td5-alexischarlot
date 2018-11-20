@@ -99,63 +99,17 @@
         <script type="text/javascript" src="lib/jquery-3.3.1/jquery-3.3.1.js"></script>
         <script type="text/javascript" src="lib/semantic-2.4.0/semantic.min.js"></script>
 
-        <script type="text/javascript">
-            MyMediatek = {
-                models: {}
-            }
-
-            $(document).ready(function () {
-                function generateAlbum () {
-                    const title = "Full Circle"
-                    const releaseDate = new Date(2016, 3, 1)
-                    const rating = 5
-                    const img = "img/albums/full-circle.jpg"
-                    const artists = "HAELOS"
-                    const nbTracks = 11
-
-                    return new MyMediatek.models.Album(title, releaseDate, rating, img, artists, nbTracks)
-                }
-
-                function generateGame () {
-                    const title = "Hollow Knight"
-                    const releaseDate = new Date(2017, 2, 24)
-                    const rating = 5
-                    const img = "img/games/hollow-knight.jpg"
-                    const studio = "Team Cherry"
-                    const nbPlayers = 1
-                    const plot = "The game tells the story of a knight on a quest to uncover the secrets of the long-abandoned insect kingdom of Hallownest, whose haunting depths draw in the adventurous and brave with promises of treasures and answers to ancient mysteries."
-
-                    return new MyMediatek.models.Game(title, releaseDate, rating, img, studio, nbPlayers, plot)
-                }
-
-                function generateMovie () {
-                    const title = "Scott Pilgrim vs. the World"
-                    const releaseDate = new Date(2010, 8, 13)
-                    const rating = 5
-                    const img = "img/movies/scott-pilgrim.jpg"
-                    const director = "Edgar Wright"
-                    const actors = "Michael Cera, Mary Elizabeth Winstead"
-                    const duration = 112
-                    const plot = "Scott Pilgrim must defeat his new girlfriend's seven evil exes in order to win her heart."
-
-                    return new MyMediatek.models.Movie(title, releaseDate, rating, img, director, actors, duration, plot)
-                }
-
-                const app = new MyMediatek.App()
-                app.init()
-                app.addMedia(generateAlbum())
-                app.addMedia(generateGame())
-                app.addMedia(generateMovie())
-            })
-        </script>
+        <script type="module" src="./dist/App.js">
+            
+        </script> 
 
         <!-- include src files here... -->
-        <script type="text/javascript" src="src/models/Media.js"></script>
+        <!--<script type="text/javascript" src="src/models/Media.js"></script>
         <script type="text/javascript" src="src/models/Collection.js"></script>
         <script type="text/javascript" src="src/models/Album.js"></script>
         <script type="text/javascript" src="src/models/Game.js"></script>
         <script type="text/javascript" src="src/models/Movie.js"></script>
 
-        <script type="text/javascript" src="src/App.js"></script>
+        <script type="text/javascript" src="src/App.js"></script> -->
     </body>
 </html>

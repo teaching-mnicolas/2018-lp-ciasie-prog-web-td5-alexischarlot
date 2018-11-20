@@ -1,6 +1,5 @@
-MyMediatek.models.Movie = (function () {
-
-    class Movie extends MyMediatek.models.Media {
+import Media from './Media.js'
+    export default class Movie extends Media {
         constructor (title, releaseDate, rating, img, director, actors, duration, plot) {
             super(title, releaseDate, rating, img)
             this.director = director
@@ -10,6 +9,3 @@ MyMediatek.models.Movie = (function () {
         }
     }
 
-    return Movie
-
-})()
